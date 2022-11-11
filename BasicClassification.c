@@ -26,5 +26,9 @@ int isStrong(int num)
         }
         sum = sum + strong;
     }
-    return sum;
+    if (sum == num)
+    {
+        return 1;
+    }
+    return 0;
 }
