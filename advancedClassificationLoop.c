@@ -1,1 +1,3 @@
-isPalindrome()
+#include <NumClass.h>
+
+// isPalindrome()
