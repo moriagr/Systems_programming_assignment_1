@@ -1,0 +1,2 @@
+prog1: main.c advancedClassificationLoop.c advancedClassificationRecursion.c BasicClassification.c
+	gcc -o prog1 main.c advancedClassificationLoop.c advancedClassificationRecursion.c BasicClassification.c

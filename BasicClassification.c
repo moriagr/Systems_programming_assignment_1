@@ -1,4 +1,4 @@
-#include <NumClass.h>
+#include "NumClass.h"
 
 int isPrime(int num)
 {
@@ -25,6 +25,7 @@ int isStrong(int num)
             strong = strong * i;
         }
         sum = sum + strong;
+        num = num / 10;
     }
     if (sum == num)
     {

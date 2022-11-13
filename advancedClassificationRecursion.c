@@ -1,4 +1,4 @@
-#include <NumClass.h>
+#include "NumClass.h"
 
 int isArmstrong(int num)
 {
@@ -6,21 +6,19 @@ int isArmstrong(int num)
 
 int isPalindrome(int num)
 {
+    int reversed_num = isPalindromeReverse(num, 0);
+    if (num == reversed_num)
+    {
+        return 1;
+    }
+    return 0;
+}
 
-    // while (num != 0)
-    // {
-    //     single_digit = num % 10;
-    //     int strong = 1;
-    //     for (int i = 2; i <= single_digit; i++)
-    //     {
-    //         strong = strong * i;
-    //     }
-    //     sum = sum + strong;
-    // }
-    // return sum;
-    // int arr[];
-    // for (int i = 0; i < count; i++)
-    // {
-    //     /* code */
-    // }
+int isPalindromeReverse(int num1, int num2)
+{
+    if (num1 == 0)
+    {
+        return num2;
+    }
+    isPalindromeReverse((num1 / 10), ((num2 * 10) + (num1 % 10)));
 }
