@@ -1,7 +1,32 @@
-#include "NumClass.h"
-
 int isArmstrong(int num)
 {
+    int len = 0;
+    int short_num = num;
+    while (short_num != 0)
+    {
+        len = len + 1;
+        short_num = short_num / 10;
+    }
+
+    int sum = 0;
+    int mul;
+    while (num != 0)
+    {
+        len = len + 1;
+        mul = num % 10;
+        int strong = 1;
+        for (int i = 0; i < len; i++)
+        {
+            strong = strong * mul;
+        }
+        sum = sum + strong;
+    }
+
+    if (sum == num)
+    {
+        return 1;
+    }
+    return 0;
 }
 
 int isPalindrome(int num)

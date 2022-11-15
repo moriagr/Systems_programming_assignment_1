@@ -1,2 +1,4 @@
-prog1: main.c advancedClassificationLoop.c advancedClassificationRecursion.c BasicClassification.c
-	gcc -o prog1 main.c advancedClassificationLoop.c advancedClassificationRecursion.c BasicClassification.c
+OBJECTS = main.c advancedClassificationLoop.c advancedClassificationRecursion.c BasicClassification.c
+
+prog1: $(OBJECTS)
+	gcc -o prog1 $(OBJECTS)
