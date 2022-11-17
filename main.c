@@ -3,7 +3,9 @@
 #include <string.h>
 #include <stdio.h>
 #include <dirent.h>
+// #include "advancedClassificationRecursion.c"
 #include "advancedClassificationLoop.c"
+#include "BasicClassification.c"
 
 #define PATH_ "./self_check_hw1/inputs/"
 #define NUM_IN_FILE 2
@@ -27,7 +29,7 @@ int main()
             printf("%s\n", dir->d_name);
             in_file = fopen(path, "r");
 
-            if (NULL == in_file )
+            if (NULL == in_file)
             {
                 break;
             }
@@ -40,13 +42,37 @@ int main()
                 fscanf(in_file, "%d", &numberArray[i]);
             }
 
-            // printf("%d\n", isArmstrong(4));
-
+            // printf("%d\n", isPalindrome(64746));
+            char armstrong_nums[numberArray[1]];
+            char palindrome_nums[numberArray[1]];
+            char prime_nums[numberArray[1]];
+            char strong_nums[numberArray[1]];
             // Going all over the range of numbers
             for (number = numberArray[0]; number < numberArray[1]; number++)
             {
+                if (isArmstrong(number))
+                {
+                    sprintf(armstrong_nums, "%s %d", armstrong_nums, number);
+                }
+                if (isPalindrome(number))
+                {
+                    sprintf(palindrome_nums, "%s %d", palindrome_nums, number);
+                }
+                if (isPrime(number))
+                {
+                    sprintf(prime_nums, "%s %d", prime_nums, number);
+                }
+                if (isStrong(number))
+                {
+                    sprintf(strong_nums, "%s %d", strong_nums, number);
+                }
+
                 // printf("Number is: %d\n", number);
             }
+            printf("The Armstrong numbers are:%s\n", armstrong_nums);
+            printf("The Palindromes are:%s\n", palindrome_nums);
+            printf("The Prime numbers are:%s\n", prime_nums);
+            printf("The Strong numbers are:%s\n",strong_nums );
 
             // Closing the file
             fclose(in_file);
