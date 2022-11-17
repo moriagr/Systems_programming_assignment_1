@@ -1,3 +1,6 @@
+#define TRUE 1
+#define FALSE 0
+
 int isArmstrong(int num)
 {
     int len = 0;
@@ -24,9 +27,9 @@ int isArmstrong(int num)
 
     if (sum == num)
     {
-        return 1;
+        return TRUE;
     }
-    return 0;
+    return FALSE;
 }
 
 int isPalindrome(int num)
@@ -40,7 +43,7 @@ int isPalindrome(int num)
 
     if (num == reversed_num)
     {
-        return 1;
+        return TRUE;
     }
-    return 0;
+    return FALSE;
 }

@@ -1,13 +1,16 @@
+#define TRUE 1
+#define FALSE 0
+
 int isPrime(int num)
 {
     for (int i = 2; i < num / 2; i++)
     {
         if (num % i != 0)
         {
-            return 0;
+            return FALSE;
         }
     }
-    return 1;
+    return TRUE;
 }
 
 int isStrong(int num)
@@ -27,7 +30,7 @@ int isStrong(int num)
     }
     if (sum == num)
     {
-        return 1;
+        return TRUE;
     }
-    return 0;
+    return FALSE;
 }

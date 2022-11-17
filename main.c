@@ -30,10 +30,13 @@ int main()
             {
                 fscanf(in_file, "%d", &numberArray[i]);
             }
-
-            for (i = 0; i < NUM_IN_FILE; i++)
+            // int num = isStrong(3);
+            // printf("%d\n", num);
+            int number;
+            // Going all over the range of numbers
+            for (number = numberArray[0]; number < numberArray[1]; number++)
             {
-                printf("Number is: %d\n\n", numberArray[i]);
+                printf("Number is: %d\n", number);
             }
             // read only
             if (NULL == in_file)

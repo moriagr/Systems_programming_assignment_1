@@ -1,32 +1,43 @@
 #include <math.h>
+#define TRUE 1
+#define FALSE 0
 
-//Utility function
-int numOfDigits(int x){
-    if (x/10==0){
+// Utility function
+int numOfDigits(int x)
+{
+    if (x / 10 == 0)
+    {
         return 1;
     }
-    else {
-        return 1+numOfDigits(x/10);
+    else
+    {
+        return 1 + numOfDigits(x / 10);
     }
 }
 
-//Utility function
-int calcSum(int x,int n){
-    if (x/10==0){
-        return (int)pow(x,n);
+// Utility function
+int calcSum(int x, int n)
+{
+    if (x / 10 == 0)
+    {
+        return (int)pow(x, n);
     }
-    else {
-        return (int)(pow(x%10, n))+ calcSum(x/10,n);
+    else
+    {
+        return (int)(pow(x % 10, n)) + calcSum(x / 10, n);
     }
 }
 
-int isArmstrong(int x){
+int isArmstrong(int x)
+{
     int n = numOfDigits(x);
-    if (calcSum(x,n) == x){
-        return 1;
+    if (calcSum(x, n) == x)
+    {
+        return TRUE;
     }
-    else {
-        return 0;
+    else
+    {
+        return FALSE;
     }
 }
 
@@ -44,8 +55,7 @@ int isPalindrome(int num)
     int reversed_num = isPalindromeReverse(num, 0);
     if (num == reversed_num)
     {
-        return 1;
+        return TRUE;
     }
-    return 0;
+    return FALSE;
 }
-
