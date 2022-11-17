@@ -1,3 +1,5 @@
+#include <math.h>
+
 //Utility function
 int numOfDigits(int x){
     if (x/10==0){
@@ -11,10 +13,10 @@ int numOfDigits(int x){
 //Utility function
 int calcSum(int x,int n){
     if (x/10==0){
-        return (int)Math.pow(x,n);
+        return (int)pow(x,n);
     }
     else {
-        return (int)(Math.pow(x%10, n))+ calcSum(x/10,n);
+        return (int)(pow(x%10, n))+ calcSum(x/10,n);
     }
 }
 

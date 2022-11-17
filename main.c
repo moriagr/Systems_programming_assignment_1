@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <dirent.h>
+
 #define PATH_ "./self_check_hw1/inputs/"
 #define NUM_IN_FILE 2
 
