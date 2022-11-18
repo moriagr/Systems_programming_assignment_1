@@ -43,7 +43,7 @@ int reversedNum(int num1, int num2){
 }
 
 int isPalindrome(int num){
-    int reversed_num = isPalindromeReverse(num, 0);
+    int reversed_num = reversedNum(num, 0);
     if (num == reversed_num){
         return TRUE;
     }
