@@ -45,5 +45,5 @@ maindrec:	$(MAIN_OBJECTS)
 all:	libclassloops.a libclassloops.so libclassrec.a libclassrec.so mains maindloop maindrec
 
 clean:
-	rm -f *.o *.a *.so *.gch *DSYM mains maindloop maindrec
+	rm -f *.o *.a *.so *.gch mains maindloop maindrec
 
