@@ -33,8 +33,13 @@ maindloop:	$(MAIN_OBJECTS)
 maindrec:	$(MAIN_OBJECTS)
 	$(CC) $(FLAGS) -c maindrec $(MAIN_OBJECTS) ./libclassrec.so
 
+libclassloops.so:	$(LOOP_OBJECTS)
+		$(CC) -shared -o libclassloops.so $(LOOP_OBJECTS)
+
+libclassrec.so:	$(REC_OBJECTS)
+		$(CC) -shared -o libclassrec.so $(REC_OBJECTS)
+
 all:	libclassloops.a libclassloops.so libclassrec.a libclassrec.so mains maindloop maindrec
-	$(CC)
 
 clean:
 	rm -f *.o *.a *.so mains maindloop maindrec
