@@ -21,22 +21,22 @@ int main(int argc, char *argv[])
     }
 
     // read file into array
-    char armstrong_nums[numberArray[1] - numberArray[0]];
-    char palindrome_nums[numberArray[1] - numberArray[0]];
-    char prime_nums[numberArray[1] - numberArray[0]];
-    char strong_nums[numberArray[1] - numberArray[0]];
+    char armstrong_nums[numberArray[1]];
+    char palindrome_nums[numberArray[1]];
+    char prime_nums[numberArray[1]];
+    char strong_nums[numberArray[1]];
 
     // Going all over the range of numbers
     int number;
     for (number = numberArray[0]; number <= numberArray[1]; number++)
     {
+        // const char* char_number = (const char*)number;
         if (isArmstrong(number))
         {
             sprintf(armstrong_nums, "%s %d", armstrong_nums, number);
         }
         if (isPalindrome(number))
         {
-        // printf("number, %d\n", number);
             sprintf(palindrome_nums, "%s %d", palindrome_nums, number);
         }
         if (isPrime(number))
