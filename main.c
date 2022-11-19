@@ -4,8 +4,8 @@
 #include <stdio.h>
 #include <dirent.h>
 // #include "advancedClassificationRecursion.c"
-#include "advancedClassificationLoop.c"
-#include "BasicClassification.c"
+// #include "advancedClassificationLoop.c"
+// #include "BasicClassification.c"
 
 #define NUM_IN_FILE 2
 
@@ -20,12 +20,15 @@ int main(int argc, char *argv[])
         count = count + 1;
     }
 
-    // read file into array
-    char armstrong_nums[numberArray[1]];
-    char palindrome_nums[numberArray[1]];
-    char prime_nums[numberArray[1]];
-    char strong_nums[numberArray[1]];
+    int armstrong_arr[numberArray[1]];
+    int palindrome_arr[numberArray[1]];
+    int prime_arr[numberArray[1]];
+    int strong_arr[numberArray[1]];
 
+    int armstrong_index = 0;
+    int palindrome_index = 0;
+    int prime_index = 0;
+    int strong_index = 0;
     // Going all over the range of numbers
     int number;
     for (number = numberArray[0]; number <= numberArray[1]; number++)
@@ -33,25 +36,47 @@ int main(int argc, char *argv[])
         // const char* char_number = (const char*)number;
         if (isArmstrong(number))
         {
-            sprintf(armstrong_nums, "%s %d", armstrong_nums, number);
+            armstrong_arr[armstrong_index] = number;
+            armstrong_index++;
         }
         if (isPalindrome(number))
         {
-            sprintf(palindrome_nums, "%s %d", palindrome_nums, number);
+            palindrome_arr[palindrome_index] = number;
+            palindrome_index++;
         }
         if (isPrime(number))
         {
-            sprintf(prime_nums, "%s %d", prime_nums, number);
+            prime_arr[prime_index] = number;
+            prime_index++;
         }
         if (isStrong(number))
         {
-            sprintf(strong_nums, "%s %d", strong_nums, number);
+            strong_arr[strong_index] = number;
+            strong_index++;
         }
     }
 
-    printf("The Armstrong numbers are:%s\n", armstrong_nums);
-    printf("The Palindromes are:%s\n", palindrome_nums);
-    printf("The Prime numbers are:%s\n", prime_nums);
-    printf("The Strong numbers are:%s\n", strong_nums);
+    printf("The Armstrong numbers are:");
+    for (number = 0; number < armstrong_index; number++)
+    {
+        printf(" %d", armstrong_arr[number]);
+    }
+
+    printf("\nThe Palindromes are:");
+    for (number = 0; number < palindrome_index; number++)
+    {
+        printf(" %d", palindrome_arr[number]);
+    }
+    printf("\nThe Prime numbers are:");
+    for (number = 0; number < prime_index; number++)
+    {
+        printf(" %d", prime_arr[number]);
+    }
+    printf("\nThe Strong numbers are:");
+    for (number = 0; number < strong_index; number++)
+    {
+        printf(" %d", strong_arr[number]);
+    }
+    printf("\n");
     return 0;
 }
