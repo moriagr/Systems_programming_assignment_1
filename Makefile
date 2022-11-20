@@ -1,5 +1,5 @@
-REC_OBJECTS=advancedClassificationRecursion.c BasicClassification.c
-LOOP_OBJECTS=advancedClassificationLoop.c BasicClassification.c
+REC_OBJECTS=advancedClassificationRecursion.o BasicClassification.o
+LOOP_OBJECTS=advancedClassificationLoop.o BasicClassification.o
 MAIN_OBJECTS=main.c NumClass.h
 AR=ar
 CC=gcc
@@ -14,11 +14,11 @@ recursived:	libclassrec.so
 
 loopd:	libclassloops.so
 
-libclassloops.a:	advancedClassificationLoop.o BasicClassification.o
-	$(AR) -rcs libclassloops.a advancedClassificationLoop.o BasicClassification.o
+libclassloops.a:	$(LOOP_OBJECTS)
+	$(AR) -rcs libclassloops.a $(LOOP_OBJECTS)
 
-libclassrec.a:	advancedClassificationRecursion.o BasicClassification.o
-	$(AR) -rcs libclassrec.a advancedClassificationRecursion.o BasicClassification.o
+libclassrec.a:	$(REC_OBJECTS)
+	$(AR) -rcs libclassrec.a $(REC_OBJECTS)
 
 libclassrec.so:	$(REC_OBJECTS)
 		$(CC) -shared -o libclassrec.so $(REC_OBJECTS)
