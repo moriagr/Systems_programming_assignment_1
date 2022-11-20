@@ -1,5 +1,5 @@
-REC_OBJECTS=advancedClassificationRecursion.o BasicClassification.o
-LOOP_OBJECTS=advancedClassificationLoop.o BasicClassification.o
+REC_OBJECTS=advancedClassificationRecursion.o basicClassification.o
+LOOP_OBJECTS=advancedClassificationLoop.o basicClassification.o
 MAIN_OBJECTS=main.c NumClass.h
 AR=ar
 CC=gcc
@@ -44,8 +44,8 @@ advancedClassificationLoop.o:	advancedClassificationLoop.c NumClass.h
 advancedClassificationRecursion.o:	advancedClassificationRecursion.c NumClass.h
 	$(CC) $(FLAGS) -c advancedClassificationRecursion.c
 
-BasicClassification.o:	BasicClassification.c NumClass.h
-	$(CC) $(FLAGS) -c BasicClassification.c
+BasicClassification.o:	basicClassification.c NumClass.h
+	$(CC) $(FLAGS) -c basicClassification.c
 
 all:	libclassloops.a libclassloops.so libclassrec.a libclassrec.so mains maindloop maindrec
 
