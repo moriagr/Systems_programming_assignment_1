@@ -1,7 +1,7 @@
-#include "NumClass.h"
-
+#ifndef TRUE
 #define TRUE 1
 #define FALSE 0
+#endif
 
 int isArmstrong(int num)
 {

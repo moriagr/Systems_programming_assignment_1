@@ -1,23 +1,19 @@
 #include "NumClass.h"
-#include <stdlib.h>
-#include <string.h>
 #include <stdio.h>
-#include <dirent.h>
-// #include "advancedClassificationRecursion.c"
-// #include "advancedClassificationLoop.c"
-// #include "BasicClassification.c"
 
+#ifndef NUM_IN_FILE
 #define NUM_IN_FILE 2
+#endif
 
 int main(int argc, char *argv[])
 {
-    int i;
+    int info;
     int numberArray[NUM_IN_FILE];
-    int count = 0;
-    while (scanf("%d", &i) == 1)
+    int num_in_array = 0;
+    while (scanf("%d", &info) == 1)
     {
-        numberArray[count] = i;
-        count = count + 1;
+        numberArray[num_in_array] = info;
+        num_in_array = num_in_array + 1;
     }
 
     int armstrong_arr[numberArray[1]];
@@ -29,11 +25,11 @@ int main(int argc, char *argv[])
     int palindrome_index = 0;
     int prime_index = 0;
     int strong_index = 0;
+
     // Going all over the range of numbers
     int number;
     for (number = numberArray[0]; number <= numberArray[1]; number++)
     {
-        // const char* char_number = (const char*)number;
         if (isArmstrong(number))
         {
             armstrong_arr[armstrong_index] = number;

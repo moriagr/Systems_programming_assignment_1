@@ -1,8 +1,9 @@
 #include <math.h>
-#include "NumClass.h"
 
+#ifndef TRUE
 #define TRUE 1
 #define FALSE 0
+#endif
 
 // Utility function
 int numOfDigits(int x){
