@@ -14,11 +14,11 @@ recursived:	libclassrec.so
 
 loopd:	libclassloops.so
 
-libclassloops.a:	$(LOOP_OBJECTS)
-	$(AR) -rcs libclassloops.a $(LOOP_OBJECTS)
+libclassloops.a:	advancedClassificationLoop.o BasicClassification.o
+	$(AR) -rcs libclassloops.a advancedClassificationLoop.o BasicClassification.o
 
-libclassrec.a:	$(REC_OBJECTS)
-	$(AR) -rcs libclassrec.a $(REC_OBJECTS)
+libclassrec.a:	advancedClassificationRecursion.o BasicClassification.o
+	$(AR) -rcs libclassrec.a advancedClassificationRecursion.o BasicClassification.o
 
 libclassrec.so:	$(REC_OBJECTS)
 		$(CC) -shared -o libclassrec.so $(REC_OBJECTS)
