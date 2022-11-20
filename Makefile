@@ -27,13 +27,13 @@ libclassloops.so:	$(LOOP_OBJECTS)
 		$(CC) -shared -o libclassloops.so $(LOOP_OBJECTS)
 
 mains:	main.o libclassrec.a
-	$(CC) $(FLAGS) -o mains main.o libclassrec.a
+	$(CC) $(FLAGS) -o mains main.o libclassrec.a -lm
 
 maindloop:	main.o libclassloops.so
 	$(CC) $(FLAGS) -o maindloop main.o ./libclassloops.so
 
 maindrec:	main.o libclassrec.so
-	$(CC) $(FLAGS) -o maindrec main.o ./libclassrec.so
+	$(CC) $(FLAGS) -o maindrec main.o ./libclassrec.so -lm
 
 main.o: main.c NumClass.h
 	$(CC) $(FLAGS) -c main.c
