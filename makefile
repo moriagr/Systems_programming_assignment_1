@@ -39,13 +39,13 @@ main.o: main.c NumClass.h
 	$(CC) $(FLAGS) -c main.c
 
 advancedClassificationLoop.o:	advancedClassificationLoop.c NumClass.h
-	$(CC) $(FLAGS) -c advancedClassificationLoop.c
+	$(CC) $(FLAGS) -fPIC -c advancedClassificationLoop.c
 
 advancedClassificationRecursion.o:	advancedClassificationRecursion.c NumClass.h
-	$(CC) $(FLAGS) -c advancedClassificationRecursion.c
+	$(CC) $(FLAGS) -fPIC -c advancedClassificationRecursion.c
 
 BasicClassification.o:	basicClassification.c NumClass.h
-	$(CC) $(FLAGS) -c basicClassification.c
+	$(CC) $(FLAGS) -fPIC -c basicClassification.c
 
 all:	libclassloops.a libclassloops.so libclassrec.a libclassrec.so mains maindloop maindrec
 
