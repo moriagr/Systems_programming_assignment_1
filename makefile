@@ -4,7 +4,8 @@ MAIN_OBJECTS=main.c NumClass.h
 AR=ar
 CC=gcc
 FLAGS= -Wall -g
-.PHONY: clean all
+
+all:	loops mains maindloop maindrec
 
 loops:	libclassloops.a
 
@@ -47,7 +48,7 @@ advancedClassificationRecursion.o:	advancedClassificationRecursion.c NumClass.h
 BasicClassification.o:	basicClassification.c NumClass.h
 	$(CC) $(FLAGS) -fPIC -c basicClassification.c
 
-all:	libclassloops.a libclassloops.so libclassrec.a libclassrec.so mains maindloop maindrec
+.PHONY: clean all loops recursives recursived loopd
 
 clean:
 	rm -f *.o *.a *.so *.gch mains maindloop maindrec
